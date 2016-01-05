@@ -39,10 +39,11 @@ gulp.task('styles', function () {
     .pipe($.size({title: 'styles'}))
 });
 
+// For images, get a key from https://tinypng.com/developers
 gulp.task('images', function () {
   gulp.src('src/images/**/*.{png,jpg,jpeg}')
   .pipe(tinypng({
-      key: 'K6Et0FaK-Ybw480ibpNN99XvU9mJsLqD',
+      key: '[YOUR_KEY]',
       sigFile: 'public/images/.tinypng-sigs',
       log: true
   }))
@@ -67,4 +68,4 @@ TODO:
 */
 
 // Default task, run when just writing 'gulp' in the terminal
-gulp.task('default', ['serve', 'browser-sync', 'watch']);
+gulp.task('default', ['serve', 'browser-sync', 'images', 'styles', 'watch']);
