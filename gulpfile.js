@@ -42,7 +42,7 @@ gulp.task('styles', function () {
 // For images, get a key from https://tinypng.com/developers
 gulp.task('images', function () {
   gulp.src('src/images/**/*.{png,jpg,jpeg}')
-  .pipe(tinypng({
+  .pipe($.tinypng({
       key: '[YOUR_KEY]',
       sigFile: 'public/images/.tinypng-sigs',
       log: true
