@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 
-gulp.task('serve', function () {
+gulp.task('serve', function (cb) {
   var started = false;
 
   return $.nodemon({
